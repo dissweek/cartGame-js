@@ -1,0 +1,139 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  overflow: hidden;
+  background: url(../img/back2.jpg);
+  background-repeat: no-repeat;
+}
+
+.game {
+  padding: 0 30px;
+}
+.game__btn-cnt {
+  width: 80%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.game__start {
+  padding: 10px 30px;
+  font-size: 28px;
+  border: none;
+  background-color: rgb(250, 234, 214);
+  border-radius: 10px;
+}
+.game__start:active {
+  background-color: rgba(13, 19, 26, 0.692);
+  color: white;
+}
+.game__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 60px;
+}
+.game__card-cnt {
+  width: 120px;
+  height: 213px;
+  position: relative;
+}
+.game__img {
+  box-shadow: 6px 6px 8px rgb(94, 184, 226), -6px -6px 8px rgba(58, 158, 204, 0.966), 6px -6px 8px rgb(94, 184, 226), -6px 6px 8px rgba(58, 158, 204, 0.966);
+  border-radius: 15px;
+  width: 120px;
+  position: absolute;
+  aspect-ratio: 9/16;
+  transition: all 1s;
+}
+.game__img:hover {
+  box-shadow: 6px 6px 8px rgba(176, 82, 253, 0.966), -6px -6px 8px rgba(176, 82, 253, 0.966), 6px -6px 8px rgba(176, 82, 253, 0.966), -6px 6px 8px rgba(176, 82, 253, 0.966);
+}
+.game__finish {
+  width: 100vw;
+  height: 300px;
+  top: 50%;
+  transform: translatey(-50%);
+  position: absolute;
+  left: -100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(101, 225, 231, 0.52);
+}
+.game__finish-title {
+  font-size: 96px;
+  color: rgba(29, 29, 29, 0.904);
+}
+.game__finish-active {
+  animation: win 1.5s forwards;
+}
+@keyframes win {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+.game__timer {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 28px;
+  color: rgba(224, 222, 222, 0.815);
+}
+.game__timer-res {
+  font-size: 28px;
+}
+
+.back {
+  z-index: 2;
+}
+
+.none {
+  transform: rotateY(90deg);
+  animation: nonactiveF 0.5s forwards;
+  animation-delay: 0.4s;
+}
+
+.active-front {
+  animation: activeF 0.5s forwards;
+}
+
+@keyframes activeF {
+  0% {
+    transform: rotateY(0deg);
+  }
+  99% {
+    height: 213px;
+    transform: rotateY(90deg);
+  }
+  100% {
+    height: 0px;
+  }
+}
+@keyframes nonactiveF {
+  0% {
+    height: 213px;
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
